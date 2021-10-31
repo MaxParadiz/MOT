@@ -1,5 +1,7 @@
 # MOT
+
 Animate molecular orbital transitions using Psi4 and Blender
+
 Author: Maximilian Paradiz Dominguez, University of Amsterdam
 
 
@@ -8,13 +10,17 @@ This can be useful for obtaining a visual representation of a simple electronic 
 
 This small program is meant to be an educational tool. It is written in a way that should allow you to adapt it to your particular needs. This program depends only on FOSS programs. 
 
-#Dependencies
+##Dependencies
 [Python](https://www.python.org/)
+
 [Psi4](https://psicode.org/)
+
 [Blender](https://www.blender.org/)
 
 Python libraries:
+
 [numpy](https://numpy.org/)
+
 [scikit-image](https://scikit-image.org/docs/stable/api/skimage.html)
 
 
