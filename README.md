@@ -20,7 +20,7 @@ This small program is meant to be an educational tool. It is written in a way th
 
 [FFmpeg](https://ffmpeg.org/)
 
-# Python libraries:
+### Python libraries:
 
 [numpy](https://numpy.org/)
 
