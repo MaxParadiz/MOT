@@ -6,18 +6,11 @@ Animate molecular orbital transitions using Psi4 and Blender
 Author: Maximilian Paradiz Dominguez, University of Amsterdam
 
 
-```math
-n \rightarrow \pi^*$ in 4,4-Dimethoxy s-tetrazine (HOMO -> LUMO)
-```
 
 <p align="center">
-  <img src="./resources/44DimethoxyTetrazine.gif" align="center" title="H2 HOMO -> LUMO">
+  <img src="./resources/44DimethoxyTetrazine.gif" align="center" title="4,4-Dimethoxy s-tetrazine (HOMO -> LUMO)">
 </p>
 
-
-```math
-\sigma \rightarrow \sigma^* if H_2 (HOMO -> LUMO)
-```
 
 <p align="center">
   <img src="./resources/H2.gif" align="center" title="H2 HOMO -> LUMO">
