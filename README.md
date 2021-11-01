@@ -28,3 +28,5 @@ This small program is meant to be an educational tool. It is written in a way th
 
 
 
+Special mentions:
+https://spltech.co.uk/blender-3d%E2%80%8A-%E2%80%8Ahow-to-create-and-render-a-scene-in-blender-using-python-api/
