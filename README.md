@@ -1,12 +1,14 @@
 # MOT
 
-<p align="center">
-  <img src="./resources/H2.gif" align="center" title="H2 HOMO -> LUMO">
-</p>
 
 Animate molecular orbital transitions using Psi4 and Blender
 
 Author: Maximilian Paradiz Dominguez, University of Amsterdam
+
+<p align="center">
+  <img src="./resources/H2.gif" align="center" title="H2 HOMO -> LUMO">
+</p>
+
 
 
 Given a molecule, it will generate an animation depicting the wave function of an electron as it undergoes a Rabi cycle that moves the electron from the HOMO into the LUMO.
