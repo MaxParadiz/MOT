@@ -8,7 +8,7 @@ Author: Maximilian Paradiz Dominguez, University of Amsterdam
 
 
 <p align="center">
-  <img src="./resources/44Dimethoxytetrazine" align="center" title="H2 HOMO -> LUMO">
+  <img src="./resources/44DimethoxyteTrazine" align="center" title="H2 HOMO -> LUMO">
 </p>
 
 <p align="center">
