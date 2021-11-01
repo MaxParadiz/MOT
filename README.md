@@ -1,5 +1,9 @@
 # MOT
 
+<p align="center">
+  <img src="./resources/H2.gif" align="center" title="H2 HOMO -> LUMO">
+</p>
+
 Animate molecular orbital transitions using Psi4 and Blender
 
 Author: Maximilian Paradiz Dominguez, University of Amsterdam
