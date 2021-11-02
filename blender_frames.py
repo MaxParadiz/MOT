@@ -33,8 +33,8 @@ scene.camera= camera_object
 #scene.display_settings.display_device = 'sRGB'
 scene.view_settings.view_transform = 'Raw'
 
-bpy.data.objects['Camera'].rotation_euler = [0,np.pi/2,0]
-bpy.data.objects['Camera'].location = [10,0,0]
+bpy.data.objects['Camera'].rotation_euler = [0,np.pi/2,np.pi/4]
+bpy.data.objects['Camera'].location = [10,10,0]
 
 
 mat = bpy.data.materials.new(name='Material')
