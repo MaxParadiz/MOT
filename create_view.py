@@ -13,16 +13,11 @@ box      = {'ymin' : -6,'ymax' : 6,
 
 dxyz = 0.15
 
-#Molecule = psi4.geometry("""
-#         H            0.34     0.0000    0.000000000000    
-#         H           -0.34     0.0000     0.000000000000    
-#""")
 
 Molecule = psi4.core.Molecule.from_string(open('OMeOMe-S0-ccpVTZ.xyz').read())
 
-Nframes = 251
+Nframes = 1
 
 HOMO, LUMO, dx = generate_orbital_arrays(Molecule, box, dxyz)
 genOBJs(HOMO,LUMO, dxyz, Nframes)
-os.system(f'blender MaterialData.blend -b --python phased_frames.py {Nframes}')
-os.system(f'ffmpeg -i tmpFrames/%d.png Tetrazine.mp4 ')
+os.system(f'blender MaterialData.blend --python view.py')

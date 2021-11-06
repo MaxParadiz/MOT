@@ -10,7 +10,7 @@ def generate_orbital_arrays(Molecule,box, dxyz, orbs = []):
     # Compute the DFT energy and the wave function using the B3LYP functional and the cc-pVTZ basis
     
 #    E, Wavefunction = psi4.energy('B3LYP/cc-pVTZ', molecule=Molecule, return_wfn=True)
-    E, Wavefunction = psi4.energy('SCF/STO-3G', molecule=Molecule, return_wfn=True)
+    E, Wavefunction = psi4.energy('B3LYP/cc-pVDZ', molecule=Molecule, return_wfn=True)
     
     # Get the number of "alpha" electrons to find the HOMO and LUMO
     
@@ -28,7 +28,7 @@ def generate_orbital_arrays(Molecule,box, dxyz, orbs = []):
 #    for i in range(0,len(Ca)):
 #     Ca[i] = Ca[i]/np.sum(Ca[i]**2)**0.5
     
-    dx,dy,dz = dxyz 
+    dx,dy,dz = [dxyz,dxyz,dxyz]
     Vele = dx*dy*dz                                 # Volume element    
     x = np.arange(box['xmin'],box['xmax'],dx)                       # Grid points along a single dimension
     y = np.arange(box['ymin'],box['ymax'],dy)                       # Grid points along a single dimension
@@ -56,9 +56,8 @@ def generate_orbital_arrays(Molecule,box, dxyz, orbs = []):
 def genOBJs(Initial_State, Final_State, dx, N_frames):
     for t in range(0,N_frames):  
      psi = np.cos(t*np.pi/(2*N_frames)) * Initial_State + np.sin(t*np.pi/(2*N_frames)) * Final_State * np.exp(-1j*t*2*np.pi/25)  
-#     psi = Initial_State 
      Psi_squared = abs(psi)**2
-     verts, faces, normals, values = measure.marching_cubes(Psi_squared, 0.00001) 
+     verts, faces, normals, values = measure.marching_cubes(Psi_squared, 0.00002) 
      o = open('tmpOBJs/%s.obj' % t,'w')
      o.write('o Wavefunction\n')
      for i in verts:

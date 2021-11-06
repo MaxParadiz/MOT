@@ -3,7 +3,6 @@ import numpy as np
 from pathlib import Path
 import os
 
-Nframes = int(os.sys.argv[5])
 
 
 bpy.ops.object.select_all(action='SELECT')
@@ -34,15 +33,13 @@ bpy.data.objects['Camera'].location = [0,-25,0]
 
 
 
-for i in range(0,Nframes):
-    bpy.ops.import_scene.obj(filepath=f"tmpOBJs/{i}.obj") # Import OBJ
-    D = bpy.data
-    WF = bpy.context.selected_objects[0].name
-    o = D.objects[WF]
-    edens = bpy.data.materials['ElectronDensity']
-    o.material_slots[o.active_material_index].material = edens
-    scene.render.filepath=f'tmpFrames/{i}.png'
-    bpy.ops.render.render(write_still=1)
-    bpy.ops.object.select_all(action='DESELECT')
-    bpy.data.objects[WF].select_set(True)
-    bpy.ops.object.delete()   # Delete the object
+bpy.ops.import_scene.obj(filepath="tmpOBJs/0.obj") # Import OBJ
+D = bpy.data
+WF = bpy.context.selected_objects[0].name
+o = D.objects[WF]
+edens = bpy.data.materials['ElectronDensity']
+o.material_slots[o.active_material_index].material = edens
+
+area = next(area for area in bpy.context.screen.areas if area.type == 'VIEW_3D')
+area.spaces[0].region_3d.view_perspective = 'CAMERA'
+area.spaces[0].shading.type = 'RENDERED'
