@@ -27,13 +27,13 @@ This small program is meant to be an educational tool. It is written in a way th
 
 ## Dependencies
 
-[Python](https://www.python.org/) (Tested with:  Python  3.9)
+[Python](https://www.python.org/) (Tested with  Python  3.9)
 
-[Psi4](https://psicode.org/) (Tested with: Psi4 1.5a1.dev151)
+[Psi4](https://psicode.org/) (Tested with Psi4 1.5a1.dev151)
 
-[Blender](https://www.blender.org/) (Tested with:  Blender 2.93.5)
+[Blender](https://www.blender.org/) (Tested with  Blender 2.93.5)
 
-[FFmpeg](https://ffmpeg.org/) (Tested with: ffmpeg n4.4.1)
+[FFmpeg](https://ffmpeg.org/) (Tested with ffmpeg n4.4.1)
 
 ### Python libraries:
 
@@ -45,7 +45,7 @@ This small program is meant to be an educational tool. It is written in a way th
 ## Usage
 
 
-Make sure thatt the dependencies are installed.
+Make sure that the dependencies are installed.
 
 Set the MOT environmental variable to the path of the MOT folder which contains the scripts.
 
