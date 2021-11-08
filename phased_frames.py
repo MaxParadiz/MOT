@@ -29,9 +29,11 @@ bpy.context.scene.collection.objects.link(camera_object)
 scene.camera= camera_object
 scene.view_settings.view_transform = 'Raw'
 
-bpy.data.objects['Camera'].rotation_euler = [np.pi/2,0,0]
-bpy.data.objects['Camera'].location = [0,-25,0]
+#bpy.data.objects['Camera'].rotation_euler = [np.pi/2,np.pi/2,0]
+#bpy.data.objects['Camera'].location = [0,-25,0]
 
+bpy.data.objects['Camera'].rotation_euler = [np.pi/2,np.pi/(2*6),0]
+bpy.data.objects['Camera'].location = [0,-20,0]
 
 
 for i in range(0,Nframes):

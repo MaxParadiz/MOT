@@ -57,7 +57,7 @@ def genOBJs(Initial_State, Final_State, dx, N_frames):
     for t in range(0,N_frames):  
      psi = np.cos(t*np.pi/(2*N_frames)) * Initial_State + np.sin(t*np.pi/(2*N_frames)) * Final_State * np.exp(-1j*t*2*np.pi/25)  
      Psi_squared = abs(psi)**2
-     verts, faces, normals, values = measure.marching_cubes(Psi_squared, 0.00002) 
+     verts, faces, normals, values = measure.marching_cubes(Psi_squared, 0.000002) 
      o = open('tmpOBJs/%s.obj' % t,'w')
      o.write('o Wavefunction\n')
      for i in verts:
@@ -76,3 +76,24 @@ def genOBJs(Initial_State, Final_State, dx, N_frames):
      o.close()
 
 
+#def genOBJs(Initial_State, Final_State, dx, N_frames):
+#    for t in range(0,N_frames):  
+#     psi = np.cos(t*np.pi/(2*N_frames)) * Initial_State + np.sin(t*np.pi/(2*N_frames)) * Final_State * np.exp(-1j*t*2*np.pi/25)  
+#     Psi_squared = abs(psi)**2
+#     verts, faces, normals, values = measure.marching_cubes(Psi_squared, 0.00002 ) 
+#     o = open('tmpOBJs/%s.obj' % t,'w')
+#     o.write('o Wavefunction\n')
+#     for i in verts:
+#      o.write('v %s %s %s \n' %(i[0]*dx-6,i[1]*dx-6,i[2]*dx-6))
+#     for f in faces:
+#      i = verts[f[0]]
+#      a,b,c = map(int,i)
+#      phase = np.sin(t*np.pi/(2*N_frames))**2 * 2*(int(Final_State[a,b,c] > 0)-0.5)* np.exp(-0.5*1j*t*2*np.pi/25).real
+#      o.write('vt %s %s \n' % (phase,0))
+#     c = 1
+#     for i in faces:
+#      o.write('f %s/%s %s/%s %s/%s \n' %(i[0]+1,c,i[1]+1,c,i[2]+1,c))
+#      c+=1
+#     o.close()
+#
+#
