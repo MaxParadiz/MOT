@@ -14,13 +14,12 @@ box      = {'ymin' : -6,'ymax' : 6,
 
 dxyz = 0.15
 
-#Molecule = psi4.geometry("""
-#         H            0.34     0.0000    0.000000000000    
-#         H           -0.34     0.0000     0.000000000000    
-#""")
+Molecule = psi4.geometry("""
+         H            0.34     0.0000    0.000000000000    
+         H           -0.34     0.0000     0.000000000000    
+""")
 
 #Molecule = psi4.core.Molecule.from_string(open('OMeOMe-S0-ccpVTZ.xyz').read())
-Molecule = psi4.core.Molecule.from_string(open('tet.xyz').read())
 
 Nframes = 251
 
