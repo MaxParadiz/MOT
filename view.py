@@ -3,6 +3,12 @@ import numpy as np
 from pathlib import Path
 import os
 
+scr_dir = '.'
+objFolder = f'{scr_dir}/OBJs'
+frameFolder = f'{scr_dir}/Frames'
+
+Path(objFolder).mkdir(parents=True, exist_ok=True)
+Path(frameFolder).mkdir(parents=True, exist_ok=True)
 
 
 bpy.ops.object.select_all(action='SELECT')
@@ -28,12 +34,12 @@ bpy.context.scene.collection.objects.link(camera_object)
 scene.camera= camera_object
 scene.view_settings.view_transform = 'Raw'
 
-bpy.data.objects['Camera'].rotation_euler = [np.pi/2,0,0]
-bpy.data.objects['Camera'].location = [0,-25,0]
+bpy.data.objects['Camera'].rotation_euler = [np.pi/2,np.pi/2,0]
+bpy.data.objects['Camera'].location = [0,-30,0]
 
 
 
-bpy.ops.import_scene.obj(filepath="tmpOBJs/0.obj") # Import OBJ
+bpy.ops.import_scene.obj(filepath=f"{objFolder}/0.obj") # Import OBJ
 D = bpy.data
 WF = bpy.context.selected_objects[0].name
 o = D.objects[WF]

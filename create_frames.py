@@ -5,6 +5,9 @@ import os
 
 Nframes = int(os.sys.argv[5])
 
+scr_dir = '.'
+objFolder = f'{scr_dir}/OBJs'
+frameFolder = f'{scr_dir}/Frames'
 
 bpy.ops.object.select_all(action='SELECT')
 bpy.ops.object.delete()   # Delete the object
@@ -29,21 +32,20 @@ bpy.context.scene.collection.objects.link(camera_object)
 scene.camera= camera_object
 scene.view_settings.view_transform = 'Raw'
 
-#bpy.data.objects['Camera'].rotation_euler = [np.pi/2,np.pi/2,0]
-#bpy.data.objects['Camera'].location = [0,-25,0]
 
-bpy.data.objects['Camera'].rotation_euler = [np.pi/2,np.pi/(2*6),0]
-bpy.data.objects['Camera'].location = [0,-20,0]
+
+bpy.data.objects['Camera'].rotation_euler = [np.pi/2,np.pi/2,0]
+bpy.data.objects['Camera'].location = [0,-30,0]
 
 
 for i in range(0,Nframes):
-    bpy.ops.import_scene.obj(filepath=f"tmpOBJs/{i}.obj") # Import OBJ
+    bpy.ops.import_scene.obj(filepath=f"{objFolder}/{i}.obj") # Import OBJ
     D = bpy.data
     WF = bpy.context.selected_objects[0].name
     o = D.objects[WF]
     edens = bpy.data.materials['ElectronDensity']
     o.material_slots[o.active_material_index].material = edens
-    scene.render.filepath=f'tmpFrames/{i}.png'
+    scene.render.filepath=f"{frameFolder}/{i}.png"
     bpy.ops.render.render(write_still=1)
     bpy.ops.object.select_all(action='DESELECT')
     bpy.data.objects[WF].select_set(True)

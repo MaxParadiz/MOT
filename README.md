@@ -17,6 +17,8 @@ Author: Maximilian Paradiz Dominguez, University of Amsterdam
 </p>
 
 
+This is a personal project still in the very early stages of development. 
+
 
 Given a molecule, it will generate an animation depicting the wave function of an electron as it undergoes a Rabi cycle that moves the electron from one orbital into another.
 This can be useful for obtaining a visual representation of a simple electronic excitation in which the first excited state is well described by a single configuration, such as a HOMO -> LUMO transition. 
@@ -25,13 +27,13 @@ This small program is meant to be an educational tool. It is written in a way th
 
 ## Dependencies
 
-[Python](https://www.python.org/)
+[Python](https://www.python.org/) (Tested with:  Python  3.9)
 
-[Psi4](https://psicode.org/)
+[Psi4](https://psicode.org/) (Tested with: Psi4 1.5a1.dev151)
 
-[Blender](https://www.blender.org/)
+[Blender](https://www.blender.org/) (Tested with:  Blender 2.93.5)
 
-[FFmpeg](https://ffmpeg.org/)
+[FFmpeg](https://ffmpeg.org/) (Tested with: ffmpeg n4.4.1)
 
 ### Python libraries:
 
@@ -39,5 +41,19 @@ This small program is meant to be an educational tool. It is written in a way th
 
 [scikit-image](https://scikit-image.org/docs/stable/api/skimage.html)
 
+
+## Usage
+
+
+Make sure thatt the dependencies are installed.
+
+Set the MOT environmental variable to the path of the MOT folder which contains the scripts.
+
+Use chmod +x animate.py and chmod +x setup_view.py to allow these scripts to be executed.
+
+Running #MOT/animate.py will create an animation of the HOMO -> LUMO molecular orbital transition.
+
+
+This set of scripts has been tested using the following setup:
 
 
