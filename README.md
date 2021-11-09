@@ -51,7 +51,7 @@ Set the MOT environmental variable to the path of the MOT folder which contains 
 
 Use chmod +x animate.py and chmod +x setup_view.py to allow these scripts to be executed.
 
-Running #MOT/animate.py will create an animation of the HOMO -> LUMO molecular orbital transition.
+Running python $MOT/animate.py will create an animation of the HOMO -> LUMO molecular orbital transition.
 
 
 This set of scripts has been tested using the following setup:
