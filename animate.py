@@ -1,4 +1,4 @@
-#!/bin/python
+#!/usr/bin/python
 
 from functions import *
 from pathlib import Path
