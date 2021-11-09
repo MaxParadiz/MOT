@@ -9,10 +9,10 @@ from skimage import measure
 
 def generate_orbital_arrays(Molecule,box, dxyz, miscFolder, orbs = []):
     # Compute the DFT energy and the wave function using the B3LYP functional and the cc-pVTZ basis
-    wfnPath = f'{miscFolder}/Wavefunction.txt' 
+    wfnPath = f'{miscFolder}/Wavefunction' 
 #    E, Wavefunction = psi4.energy('B3LYP/cc-pVTZ', molecule=Molecule, return_wfn=True)
     if os.path.exists(wfnPath):
-        Wavefunction = psi4.core.Wavefunction.from_file(wfnPath) 
+        Wavefunction = psi4.core.Wavefunction.from_file(wfnPath+'.npy') 
     else:
         E, Wavefunction = psi4.energy('B3LYP/cc-pVDZ', molecule=Molecule, return_wfn=True)
         Wavefunction.to_file(wfnPath)
