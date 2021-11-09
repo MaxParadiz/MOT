@@ -1,5 +1,3 @@
-#!/usr/bin/python3
-
 from functions import *
 from pathlib import Path
 import os

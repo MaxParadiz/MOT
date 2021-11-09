@@ -1,5 +1,3 @@
-#!/usr/bin/python3
-
 from functions import *
 from pathlib import Path
 import os
@@ -32,4 +30,4 @@ HOMO, LUMO, dx = generate_orbital_arrays(Molecule, box, dxyz)
 
 genOBJs(HOMO,LUMO, dxyz, Nframes, objFolder)
 
-os.system(f'blender MaterialData.blend --python view.py')
+os.system(f'blender $MOT/MaterialData.blend --python $MOT/view.py')
