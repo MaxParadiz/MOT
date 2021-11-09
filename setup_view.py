@@ -5,9 +5,11 @@ import os
 scr_dir = '.'
 objFolder = f'{scr_dir}/OBJs'
 frameFolder = f'{scr_dir}/Frames'
+miscFolder = f'{scr_dir}/misc'
 
 Path(objFolder).mkdir(parents=True, exist_ok=True)
 Path(frameFolder).mkdir(parents=True, exist_ok=True)
+Path(miscFolder).mkdir(parents=True, exist_ok=True)
 
 box      = {'ymin' : -6,'ymax' : 6, 
             'xmin' : -6,'xmax' : 6, 
@@ -26,7 +28,7 @@ Molecule = psi4.geometry("""
 
 Nframes = 1
 
-HOMO, LUMO, dx = generate_orbital_arrays(Molecule, box, dxyz)
+HOMO, LUMO, dx = generate_orbital_arrays(Molecule, box, dxyz, miscFolder)
 
 genOBJs(HOMO,LUMO, dxyz, Nframes, objFolder)
 

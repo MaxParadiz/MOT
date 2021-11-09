@@ -1,4 +1,5 @@
 import psi4
+import os
 import numpy as np
 from skimage import measure
 
@@ -6,12 +7,15 @@ from skimage import measure
 
 
 
-def generate_orbital_arrays(Molecule,box, dxyz, orbs = []):
+def generate_orbital_arrays(Molecule,box, dxyz, miscFolder, orbs = []):
     # Compute the DFT energy and the wave function using the B3LYP functional and the cc-pVTZ basis
-    
+    wfnPath = f'{miscFolder}/Wavefunction.txt' 
 #    E, Wavefunction = psi4.energy('B3LYP/cc-pVTZ', molecule=Molecule, return_wfn=True)
-    E, Wavefunction = psi4.energy('B3LYP/cc-pVDZ', molecule=Molecule, return_wfn=True)
-    
+    if os.exists(wfnPath):
+        Wavefunction = psi4.core.Wavefunction.from_file(wfnPath) 
+    else:
+        E, Wavefunction = psi4.energy('B3LYP/cc-pVDZ', molecule=Molecule, return_wfn=True)
+        Wavefunction.to_file(wfnPath)
     # Get the number of "alpha" electrons to find the HOMO and LUMO
     
     n_electrons = Wavefunction.nalpha()
@@ -47,7 +51,7 @@ def generate_orbital_arrays(Molecule,box, dxyz, orbs = []):
     # Get the HOMO and LUMO as 3D matrices
     HOMO = MOs[0,:,:,:] 
     LUMO = MOs[1,:,:,:]
-    
+     
     # Return these two arrays
     return HOMO, LUMO, dx
     
